@@ -8,9 +8,10 @@ const user_schema = new data_model({
     name: String,
     surname: String,
     birthday: Number,
-    phone: Number,
-    email: String,
-    bank_card: String
+    phone: {type: Number, unique: true},
+    email: {type: String, unique: true},
+    bank_card: {type: String, unique: true},
+    isAdmin: {type: Boolean, default: false}
 })
 
 // model creation
