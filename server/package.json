@@ -4,8 +4,8 @@
   "description": "MERN stack eCommerce project.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "back-end": "nodemon server.js"
+
+    "backEnd": "nodemon server.js"
   },
   "repository": {
     "type": "git",
