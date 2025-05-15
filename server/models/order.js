@@ -5,10 +5,11 @@ const data_model = mongoose.Schema;
 
 // describing the order Schema
 const order_schema = new data_model({
-    orderNumber: {type: String, unique: true},
+    order_number: {type: String, unique: true},
     amount: Number,
     items: String,
-    qty: Number
+    qty: Number,
+    purchase_date: {type: Date, default: Date.now}
 })
 
 const Order = mongoose.model('Order', order_schema);
