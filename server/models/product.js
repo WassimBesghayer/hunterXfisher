@@ -13,6 +13,7 @@ const product_schema = new data_model({
     price: Number,
     photo: String,
     category: String,
+    activity:String,
     description: String,
     warranty: Number,
 })
