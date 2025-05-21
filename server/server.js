@@ -1,6 +1,6 @@
 // defining 'express'
 const express=require("express");
-
+const cors=require("cors")
 // defining 'app'
 const app=express();
 
