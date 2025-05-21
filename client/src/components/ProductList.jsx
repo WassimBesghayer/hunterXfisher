@@ -6,9 +6,9 @@ function ProductList() {
     const products=useSelector((state)=>state.product.productlist);
     console.log(products)
   return (
-    <div>{
-        products?.map((el)=><Item_card el={el}/>)
-    }</div>
+    <div className='container-itemsList'>
+        { products?.map((el)=><Item_card el={el}/>) }
+    </div>
   )
 }
 
