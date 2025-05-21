@@ -25,8 +25,8 @@ productRouter.get("/:id", async (req, res) => {
     // Find item by ID from URL parameter
     let result = await Product.findById(req.params.id);
     
-    // Send found item in response
-    res.send({ item: result, msg: " item" });
+    // Send response
+    res.send({ item: result, msg: "item found" });
   } catch (error) {
     console.log(error);
   }
