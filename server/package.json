@@ -6,7 +6,7 @@
   "scripts": {
     "backEnd": "nodemon server.js",
     "frontEnd": "cd.. && cd client && npm start",
-    "project": "concurrently \"npm run backEnd\" \"npm run frontEnd\""
+    "dev": "concurrently \"npm run backEnd\" \"npm run frontEnd\""
 
   },
   "repository": {
