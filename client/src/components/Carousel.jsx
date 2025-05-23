@@ -33,19 +33,19 @@ function Carousel() {
             <div className="carousel-item active">
             <img src="https://mrwallpaper.com/images/hd/download-hunting-wallpaper-mxq7rmd43l4egbue.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block caro">
-                <h1>The Best in the Field, <br/>Proven Performance.</h1>
+                <h1>The Best in the Field,<br/>Proven Performance.</h1>
             </div>
             </div>
             <div className="carousel-item">
             <img src="https://wallpapercat.com/w/full/8/6/a/50101-2500x1667-desktop-hd-fishing-background-image.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block caro">
-                <h1>Engineered with passion, <br/>Built to Last.</h1>
+                <h1>Engineered with passion,<br/>Built to Last.</h1>
             </div>
             </div>
             <div className="carousel-item">
             <img src="https://wallpapers.com/images/featured/camping-desktop-06r8wb1zl0ftm5s0.jpg" className="d-block w-100" alt="..." />
             <div className="carousel-caption d-none d-md-block caro">
-                <h1>Embrace the Wild, <br/>Unleash Your Spirit.</h1>
+                <h1>Embrace the Wild,<br/>Unleash Your Spirit.</h1>
             </div>
             </div>
         </div>
