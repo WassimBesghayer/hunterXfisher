@@ -3,7 +3,7 @@ const Order = require("../models/order");
 const orderRouter=express.Router();
 
 // add order
-orderRouter.post("/add/order", async (req, res) => {
+orderRouter.post("/add", async (req, res) => {
     try {
     // Create new Order instance from request body
     let newOrder = new Order(req.body);
@@ -64,7 +64,7 @@ orderRouter.put("/:id", async (req, res) => {
 orderRouter.delete("/:id", async (req, res) => {
     try {
     // Find and delete order by ID
-    let result = await order.findByIdAndDelete(req.params.id);
+    let result = await Order.findByIdAndDelete(req.params.id);
     
     // Send success message
     res.send({ msg: "order is deleted" });
