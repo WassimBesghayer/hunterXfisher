@@ -87,4 +87,15 @@ router.get("/current", isAuth(), (req, res) => {
 });
 
 
+// get all users
+router.get("/", async (req, res) => {
+    try {
+        let result = await User.find();
+        res.send({users: result, msg: "These are all users :"})
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
 module.exports = router;
