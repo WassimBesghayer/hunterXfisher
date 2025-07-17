@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
 body {
     font-family: 'Muli', sans-serif;
     height: 100% !important;
@@ -7,29 +8,16 @@ body {
     margin: 0 !important;
 }
 
-
-.container-fluid{
+.container-footer .container-fluid{
     margin-top: 101px;
     color:#000 !important;
 }
 
-/* .card{
-    color:#757575 !important;
-    background-color: #fff !important;
-    align-items: center !important;
-    background: url('https://i.imgur.com/9djv5sH.jpg');
-    background-size: contain;
-    background-repeat:no-repeat;
-    background-position:  right calc(110px + (150 - 110) * ((100vw - 360px) / (1600 - 360)))  bottom !important;     
-} */
+ul { list-style: none; }
 
-h2{
-    font-size: calc(25px + (45 - 25) * ((100vw - 360px) / (1600 - 360))) !important; 
-}
+h2{ font-size: calc(25px + (45 - 25) * ((100vw - 360px) / (1600 - 360))) !important; }
 
-h5{
-    font-size: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important; 
-}
+h5{ font-size: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important; }
 
 
 .fa{
@@ -45,34 +33,31 @@ button {
     padding-right: calc(20px + (28 - 20) * ((100vw - 360px) / (1600 - 360))) !important; 
     padding-top:  calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important; 
     padding-bottom:   calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important; 
- }
+}
 
- button:focus {
-     -moz-box-shadow: none !important;
-     -webkit-box-shadow: none !important;
-     box-shadow: none !important;
-     outline-width: 0
- }
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
 
 
- li{
-     margin-top: 10px ;
-     margin-bottom: 10px ;
- }
+li{
+    margin-top: 10px ;
+    margin-bottom: 10px ;
+}
 
- input{
-     border: 2px solid green !important;
- }
- 
+input{ border: 2px solid green !important; }
+
 
 .input-group-lg>.custom-select, .input-group-lg>.form-control:not(textarea) {
     height: calc(40px + (48 - 40) * ((100vw - 360px) / (1600 - 360))) !important; 
 }
 
-
 input::-webkit-input-placeholder {
-  padding-left: 5px !important;
-  transform:translate3d(0,-4px,0)
+    padding-left: 5px !important;
+    transform:translate3d(0,-4px,0)
 }
 
 input::placeholder {
@@ -81,30 +66,27 @@ input::placeholder {
 }
 
 input:focus {
-     -moz-box-shadow: none !important;
-     -webkit-box-shadow: none !important;
-     box-shadow: none !important;
-     outline-width: 0
- }
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
 
- img{
-     vertical-align: middle !important;
+img{
+    vertical-align: middle !important;
     width: 100%;
     height: auto;
     width: calc(17px + 6 * ((100vw - 320px) / 680)); 
- }
+}
 
- li:first-child {
+li:first-child {
     font-size:  21px !important;
     font-weight: bold;
     margin-bottom: calc(40px + (48 - 40) * ((100vw - 360px) / (1600 - 360))) !important;
     color:#757575 !important;
- 
 }
 
-footer{ 
-    color:#757575 !important;
-}
+footer{ color:#757575 !important; }
 
 .social{
     position: relative;
@@ -115,4 +97,11 @@ footer{
     cursor: pointer !important;
     color:green;
     font-weight: bold;
+}
+
+svg {
+    height: 20px;
+    width: 20px;
+    color: black;
+    margin-right: 15px;
 }
