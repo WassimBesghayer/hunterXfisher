@@ -1,0 +1,29 @@
+.navbar-body {
+    background-color: rgb(13 49 86);
+    height: 80px;
+}
+.navbar-body a {
+    text-decoration: none;
+    cursor:pointer;
+}
+#sign-in {
+    position: relative;
+    right: 3rem;;
+}
+#search-form {
+    position: absolute;
+    right: 20rem;
+}
+.mynav .d-flex {
+    position: relative;
+    right: 16rem;
+}
+.me-2 { width: 21rem; }
+.icons { margin-right: 3rem; }
+.icons a { padding: 0 10px; }
+.icons svg { width: 35px; }
+
+.products_group {
+    position: relative;
+    left: 8rem;
+}
