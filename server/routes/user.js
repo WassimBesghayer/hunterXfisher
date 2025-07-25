@@ -12,9 +12,9 @@ const isAuth = require("../middleware/passport");
 
 //register
 router.post("/register", registerRules(), validation, async (req, res) => {
-  const { name, lastname, email, password } = req.body;
+  const { name, lastname, email, password, phone, bank_card,address, category} = req.body;
   try {
-    const newUser = new User({ name, lastname, email, password });
+    const newUser = new User({ name, lastname, email, password, phone, bank_card, address, category });
     // check if the email exist
     const searchedUser = await User.findOne({ email });
 
@@ -97,5 +97,33 @@ router.get("/", async (req, res) => {
     }
 })
 
+// update a User
+router.put("/:id", async (req, res) => {
+  try {
+    // Find item by ID and update with request body
+    let result = await User.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $set: { ...req.body } }
+    );
+    
+    // Send success message
+    res.send({ item: "result", msg: "user is updated" });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+// delete a User
+router.delete("/:id", async (req, res) => {
+  try {
+    // Find and delete item by ID
+    let result = await User.findByIdAndDelete(req.params.id);
+    
+    // Send success message
+    res.send({ msg: "User is deleted" });
+  } catch (error) {
+    console.log(error);
+  }
+});
 
 module.exports = router;
