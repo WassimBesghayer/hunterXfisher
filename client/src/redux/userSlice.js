@@ -1,18 +1,18 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// This file contains the user slice for Redux, which manages user-related state and actions.
+// restful API consumption
 export const userRegister = createAsyncThunk("user/register", async (user) => {
   try {
-    let response = await axios.post(
-      "http://localhost:5000/user/register",
-      user
-    );
+    let response = await axios.post("http://localhost:5000/user/register", user);
     return response;
   } catch (error) {
     console.log(error);
   }
 });
-export const userlogin = createAsyncThunk("user/logi", async (user) => {
+
+export const userlogin = createAsyncThunk("user/login", async (user) => {
   try {
     let response = await axios.post("http://localhost:5000/user/login", user);
     return await response;
@@ -20,6 +20,7 @@ export const userlogin = createAsyncThunk("user/logi", async (user) => {
     console.log(error);
   }
 });
+
 export const userCurrent = createAsyncThunk("user/current", async () => {
   try {
     let response = await axios.get("http://localhost:5000/user/current", {
@@ -32,9 +33,45 @@ export const userCurrent = createAsyncThunk("user/current", async () => {
     console.log(error);
   }
 });
+
+export const deleteuser = createAsyncThunk("user/delete", async (id) => {
+  try {
+    let result = await axios.delete(`http://localhost:5000/user/${id}`);
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+export const getuser = createAsyncThunk("user/get", async () => {
+  try {
+    let result = await axios.get("http://localhost:5000/user/");
+    return result;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+export const edituser = createAsyncThunk("user/edit", async ({ id, edited }) => {
+    try {
+      let result = await axios.put(`http://localhost:5000/user/${id}`, edited);
+      return result;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+
+
+
+
+// Initial state for the user slice
+// It contains the user object, status of the request, and a list of users.
 const initialState = {
   user: null,
   status: null,
+  userlist: []
 };
 
 export const userSlice = createSlice({
@@ -46,19 +83,28 @@ export const userSlice = createSlice({
       localStorage.removeItem("token");
     },
   },
- extraReducers: (builder) => {
+
+
+
+
+// Extra reducers to handle the async actions defined above
+// These reducers update the state based on the status of the async actions.
+extraReducers: (builder) => {
     builder
+    // register
       .addCase(userRegister.pending, (state) => {
         state.status = "pending";
       })
       .addCase(userRegister.fulfilled, (state, action) => {
-         state.status = "successsss";
+        state.status = "successsss";
       state.user = action.payload.data.newUserToken;
       localStorage.setItem("token", action.payload.data.token);
       })
       .addCase(userRegister.rejected, (state) => {
         state.status = "fail";
       })
+
+      // login
     .addCase(userlogin.pending, (state) => {
         state.status = "pending";
       })
@@ -70,6 +116,8 @@ export const userSlice = createSlice({
       .addCase(userlogin.rejected, (state) => {
         state.status = "fail";
       })
+
+      // current user
           .addCase(userCurrent.pending, (state) => {
         state.status = "pending";
       })
@@ -78,6 +126,18 @@ export const userSlice = createSlice({
       state.user = action.payload?.data.user;
       })
       .addCase(userCurrent.rejected, (state) => {
+        state.status = "fail";
+      })
+
+      // get user
+      .addCase(getuser.pending, (state) => {
+        state.status = "pending";
+      })
+      .addCase(getuser.fulfilled, (state, action) => {
+          state.status = "successsss";
+      state.userlist = action.payload?.data.users;
+      })
+      .addCase(getuser.rejected, (state) => {
         state.status = "fail";
       })
 
