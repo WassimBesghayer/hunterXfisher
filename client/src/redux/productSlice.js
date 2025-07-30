@@ -49,6 +49,7 @@ export const productSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      // Handling get actions
       .addCase(getproduct.pending, (state) => {
         state.status = "pending";
       })
@@ -59,6 +60,8 @@ export const productSlice = createSlice({
       .addCase(getproduct.rejected, (state) => {
         state.status = "fail";
       })
+
+      // Handling add actions
       .addCase(addproduct.pending, (state) => {
         state.status = "pending";
       })
@@ -68,6 +71,8 @@ export const productSlice = createSlice({
       .addCase(addproduct.rejected, (state) => {
         state.status = "fail";
       })
+
+      // Handling delete actions
       .addCase(deleteproduct.pending, (state) => {
         state.status = "pending";
       })
@@ -77,6 +82,8 @@ export const productSlice = createSlice({
       .addCase(deleteproduct.rejected, (state) => {
         state.status = "fail";
       })
+
+      // Handling edit actions
       .addCase(editproduct.pending, (state) => {
         state.status = "pending";
       })
